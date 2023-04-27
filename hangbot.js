@@ -355,19 +355,23 @@ var Hangbot = /** @class */ (function() {
     var _this = this;
     if (parsedData.handler == HANDLER_LOGIN_EVENT) {
       if (parsedData.type == "success") {
-
+console.log("Logined success : ",  this.userName )
         var item = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
         //this.setStatus("Hangbot by\nhttps://t.me/voidrulz");
-        //this.setStatus(item);
+        this.setStatus(item);
         this.joinRoom("friends");
-        this.joinRoom("cinta");
         //this.getPublicRooms();
         //this.joinRooms();
 
-
+      }
+      
+          if (parsedData.handler == HANDLER_LOGIN_EVENT) {
+      if (parsedData.type == "failed") {
+console.log("Logined failed : ",  this.userName )
 
       }
+      
     }
     if (parsedData.handler == HANDLER_ROOM_EVENT) {
       if (parsedData.type == "text") {
@@ -659,11 +663,11 @@ function getRandomIntInclusive(min, max) {
 //#endregion
 
 function loginHangbots() {
-  var h1 = new Hangbot(process.env.BOT1, "bot345*");
-  var h2 = new Hangbot(process.env.BOT2, "bot345");
-  var h3 = new Hangbot(process.env.BOT3, "bot345");
-  var h4 = new Hangbot(process.env.BOT4, "bot345");
-  var h5 = new Hangbot(process.env.BOT5, "bot345");
+  var h1 = new Hangbot(process.env.BOT1, process.env.HB_PWD);
+  var h2 = new Hangbot(process.env.BOT2, process.env.HB_PWD);
+  var h3 = new Hangbot(process.env.BOT3, process.env.HB_PWD);
+  var h4 = new Hangbot(process.env.BOT4, process.env.HB_PWD);
+  var h5 = new Hangbot(process.env.BOT5, process.env.HB_PWD);
 
 }
 
