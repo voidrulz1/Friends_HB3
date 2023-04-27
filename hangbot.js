@@ -366,7 +366,7 @@ console.log("Logined success : ",  this.userName )
 
       }
       
-          if (parsedData.handler == HANDLER_LOGIN_EVENT) {
+         
       if (parsedData.type == "failed") {
 console.log("Logined failed : ",  this.userName )
 
